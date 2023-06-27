@@ -2,7 +2,7 @@
 
 /**
  * puts2 - Prints every other character of a string, starting with the first
- *         character, followed by a new line.
+ *         character, until it encounters the null character ('\0').
  * @str: The input string.
  */
 void puts2(char *str)
@@ -12,7 +12,8 @@ void puts2(char *str)
 
 	while (*str != '\0')
 	{
-		printf("%c", *str);
+		if (*str != '\0')
+			printf("%c", *str);
 		str += 2;
 	}
 
