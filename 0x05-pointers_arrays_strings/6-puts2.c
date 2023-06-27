@@ -9,13 +9,10 @@ void puts2(char *str)
 	if (str == NULL)
 		return;
 
-	int i = 0;
-
-	while (str[i] != '\0')
-	{
+	int i;
+	
+	for (i = 0; str[i] != '\0'; i += 2)
 		printf("%c", str[i]);
-		i += 2;
-	}
 
 	printf("\n");
 }
