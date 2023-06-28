@@ -25,6 +25,10 @@ int _atoi(char *s)
         i++;
     }
 
+    /* Skip over non-digit characters */
+    while (!(s[i] >= '0' && s[i] <= '9'))
+        i++;
+
     /* Convert string to integer */
     while (s[i] >= '0' && s[i] <= '9')
     {
