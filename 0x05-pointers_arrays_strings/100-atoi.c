@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <limits.h>
 
 /**
@@ -9,19 +8,17 @@
  */
 int _atoi(char *s)
 {
-    if (s == NULL || *s == '\0') {
-        return 0;  // Empty string or NULL input, return 0
-    }
-
     int sign = 1;
     int result = 0;
     int i = 0;
 
-    /* Handle leading whitespace */
+    if (s == NULL || *s == '\0') {
+        return 0; /* Empty string or NULL input, return 0 */
+    }
+
     while (s[i] == ' ')
         i++;
 
-    /* Handle sign */
     while (s[i] == '-' || s[i] == '+')
     {
         if (s[i] == '-')
@@ -29,18 +26,15 @@ int _atoi(char *s)
         i++;
     }
 
-    /* Skip over non-digit characters */
     while (!(s[i] >= '0' && s[i] <= '9'))
     {
         if (s[i] == '\0')
-            return 0;  // No numbers found, return 0
+            return 0; /* No numbers found, return 0 */
         i++;
     }
 
-    /* Convert string to integer */
     while (s[i] >= '0' && s[i] <= '9')
     {
-        /* Check for integer overflow */
         if (result > (INT_MAX - (s[i] - '0')) / 10)
         {
             if (sign == 1)
