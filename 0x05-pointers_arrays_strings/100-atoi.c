@@ -9,6 +9,10 @@
  */
 int _atoi(char *s)
 {
+    if (s == NULL || *s == '\0') {
+        return 0;  // Empty string or NULL input, return 0
+    }
+
     int sign = 1;
     int result = 0;
     int i = 0;
@@ -27,7 +31,11 @@ int _atoi(char *s)
 
     /* Skip over non-digit characters */
     while (!(s[i] >= '0' && s[i] <= '9'))
+    {
+        if (s[i] == '\0')
+            return 0;  // No numbers found, return 0
         i++;
+    }
 
     /* Convert string to integer */
     while (s[i] >= '0' && s[i] <= '9')
