@@ -1,5 +1,5 @@
 #include <limits.h>
-
+#include <stddef.h>
 /**
  * _atoi - Converts a string to an integer.
  * @s: The input string.
