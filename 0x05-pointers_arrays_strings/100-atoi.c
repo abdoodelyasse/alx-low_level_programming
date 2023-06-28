@@ -16,7 +16,7 @@ int _atoi(char *s)
     if (s == NULL || *s == '\0') {
         return 0; /* Empty string or NULL input, return 0 */
     }
-    
+
     while (s[i] == ' ')
         i++;
 
