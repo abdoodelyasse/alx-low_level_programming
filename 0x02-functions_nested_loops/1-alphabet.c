@@ -1,17 +1,19 @@
+
 /**
- * print_alphabet - function to print abc
- *
- * Return: Always 0
+ * print_alphabet - prints the alphabet, in lowercase, followed by a new line
  */
 void print_alphabet(void)
 {
-	char c;
+	char ch;
 
-	for (c = 'a'; c <= 'z'; c++)
+	ch = 'a';
+
+	while (ch <= 'z')
 	{
-		_putchar(c);
+		/* Replace _putchar with the appropriate output function */
+		putchar(ch);
+		ch++;
 	}
-_putchar('\n');
 
-return (0);
+	putchar('\n');
 }
